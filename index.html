@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BigChange × Service Solutions Group — Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{--bc-dark:#1a1f36;--bc-blue:#0066FF;--bc-blue-light:#3d8bfd;--bc-cyan:#00C2CB;--bc-green:#00C853;--bc-orange:#FF6D00;--bc-red:#FF3D57;--bc-white:#fff;--bc-gray-50:#f7f8fc;--bc-gray-100:#eef0f6;--bc-gray-200:#d8dce8;--bc-gray-400:#9298b0;--bc-gray-600:#5c6180;--bc-gray-800:#2d3250;--bc-radius:16px;--bc-shadow:0 4px 24px rgba(0,0,0,.06);--bc-shadow-lg:0 12px 48px rgba(0,0,0,.1)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bc-gray-50);color:var(--bc-gray-800);line-height:1.65;-webkit-font-smoothing:antialiased}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--bc-gray-100);transition:box-shadow .3s}.nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}.nav-inner{max-width:1140px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between}.nav-logo img{height:32px}.nav-links{display:flex;gap:28px}.nav-links a{font-size:13px;font-weight:600;color:var(--bc-gray-600);text-decoration:none;transition:color .2s}.nav-links a:hover{color:var(--bc-blue)}
+.hero{position:relative;min-height:520px;background:linear-gradient(135deg,var(--bc-dark) 0%,#0d1b3e 40%,#0a2e5c 100%);display:flex;align-items:center;justify-content:center;padding:140px 32px 80px;overflow:hidden}.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(0,194,203,.15) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(0,102,255,.12) 0%,transparent 50%)}.hero-grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(rgba(255,255,255,.3) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.3) 1px,transparent 1px);background-size:60px 60px}.hero-content{position:relative;z-index:2;max-width:820px;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,194,203,.12);border:1px solid rgba(0,194,203,.25);border-radius:50px;padding:6px 18px;font-size:12px;font-weight:600;color:var(--bc-cyan);letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px;animation:fadeInDown .6s ease-out}.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--bc-cyan);animation:pulse-dot 2s infinite}@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,56px);font-weight:400;color:var(--bc-white);line-height:1.15;margin-bottom:20px;animation:fadeInUp .7s ease-out .1s both}.hero h1 span{background:linear-gradient(135deg,var(--bc-cyan),var(--bc-blue-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hero p{font-size:17px;color:rgba(255,255,255,.6);max-width:620px;margin:0 auto 36px;animation:fadeInUp .7s ease-out .25s both}
+.hero-stat-row{display:flex;justify-content:center;gap:48px;animation:fadeInUp .7s ease-out .4s both;flex-wrap:wrap}.hero-stat{text-align:center}.hero-stat .num{font-size:32px;font-weight:800;color:var(--bc-white)}.hero-stat .num em{font-style:normal;background:linear-gradient(135deg,var(--bc-cyan),var(--bc-green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hero-stat .lbl{font-size:12px;font-weight:500;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeInDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+.section{max-width:1140px;margin:0 auto;padding:80px 32px}.section-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bc-blue);margin-bottom:12px}.section-tag::before{content:'';width:20px;height:2px;background:linear-gradient(90deg,var(--bc-blue),var(--bc-cyan));border-radius:2px}.section h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,40px);font-weight:400;color:var(--bc-dark);line-height:1.2;margin-bottom:16px}.section .subtitle{font-size:16px;color:var(--bc-gray-600);max-width:680px;margin-bottom:48px}
+.exec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}.exec-card{background:var(--bc-white);border-radius:var(--bc-radius);padding:32px;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);transition:transform .3s,box-shadow .3s}.exec-card:hover{transform:translateY(-4px);box-shadow:var(--bc-shadow-lg)}.exec-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px}.exec-icon.blue{background:rgba(0,102,255,.08)}.exec-icon.cyan{background:rgba(0,194,203,.08)}.exec-icon.green{background:rgba(0,200,83,.08)}.exec-card h3{font-size:17px;font-weight:700;color:var(--bc-dark);margin-bottom:10px}.exec-card p{font-size:14px;color:var(--bc-gray-600)}
+.franchise-card{background:var(--bc-white);border-radius:var(--bc-radius);padding:32px;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}.franchise-card:hover{transform:translateY(-4px);box-shadow:var(--bc-shadow-lg)}.franchise-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--bc-blue),var(--bc-cyan))}.franchise-label{display:inline-block;background:rgba(0,102,255,.08);color:var(--bc-blue);font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+.table-wrap{background:var(--bc-white);border-radius:var(--bc-radius);border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);overflow:hidden}.comp-table{width:100%;border-collapse:collapse}.comp-table thead th{padding:18px 24px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:left}.comp-table thead th:first-child{color:var(--bc-gray-400);background:var(--bc-gray-50)}.comp-table thead th:nth-child(2){color:var(--bc-red);background:rgba(255,61,87,.04)}.comp-table thead th:nth-child(3){color:var(--bc-green);background:rgba(0,200,83,.04)}.comp-table tbody td{padding:18px 24px;font-size:14px;border-top:1px solid var(--bc-gray-100);vertical-align:top}.comp-table tbody td:first-child{font-weight:600;color:var(--bc-dark);background:var(--bc-gray-50);width:180px}.comp-table tbody td:nth-child(2){color:var(--bc-gray-600);background:rgba(255,61,87,.015)}.comp-table tbody td:nth-child(3){color:var(--bc-gray-800);background:rgba(0,200,83,.015)}.tag-bad{display:inline-block;background:rgba(255,61,87,.08);color:var(--bc-red);font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-right:4px}.tag-good{display:inline-block;background:rgba(0,200,83,.08);color:var(--bc-green);font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-right:4px}
+.impact-banner{background:linear-gradient(135deg,var(--bc-dark) 0%,#0d1b3e 100%);border-radius:var(--bc-radius);padding:56px 48px;color:var(--bc-white);position:relative;overflow:hidden}.impact-banner::before{content:'';position:absolute;top:-50%;right:-20%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,194,203,.1) 0%,transparent 70%)}.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;position:relative;z-index:2}.impact-item h4{font-size:13px;font-weight:600;color:var(--bc-cyan);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}.impact-item p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7}.impact-item .big-num{font-size:44px;font-weight:800;background:linear-gradient(135deg,var(--bc-cyan),var(--bc-green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:8px}
+.roi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}.roi-card{background:var(--bc-white);border-radius:var(--bc-radius);padding:32px;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);text-align:center;transition:transform .3s}.roi-card:hover{transform:translateY(-4px)}.roi-value{font-size:40px;font-weight:800;margin-bottom:4px}.roi-value.blue{color:var(--bc-blue)}.roi-value.cyan{color:var(--bc-cyan)}.roi-value.green{color:var(--bc-green)}.roi-value.orange{color:var(--bc-orange)}.roi-label{font-size:14px;font-weight:600;color:var(--bc-dark);margin-bottom:8px}.roi-desc{font-size:13px;color:var(--bc-gray-400);line-height:1.5}
+.contact-section{background:linear-gradient(135deg,var(--bc-dark),#0d1b3e);border-radius:var(--bc-radius);padding:48px;display:flex;align-items:center;gap:40px;color:#fff}.contact-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--bc-blue),var(--bc-cyan));display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;flex-shrink:0}.contact-info h3{font-size:22px;font-weight:700;margin-bottom:4px}.contact-role{font-size:14px;color:var(--bc-cyan);font-weight:600;margin-bottom:12px}.contact-details{display:flex;gap:24px;flex-wrap:wrap}.contact-details span{font-size:13px;color:rgba(255,255,255,.6)}.contact-details a{color:rgba(255,255,255,.8);text-decoration:none}.contact-details a:hover{color:var(--bc-cyan)}
+.footer{text-align:center;padding:40px 32px;font-size:12px;color:var(--bc-gray-400)}
+@media(max-width:768px){.nav-links{display:none}.hero{padding:120px 24px 60px}.hero-stat-row{gap:24px}.section{padding:48px 20px}.impact-banner{padding:36px 24px}.comp-table thead th,.comp-table tbody td{padding:12px 14px}.contact-section{flex-direction:column;text-align:center;padding:36px 24px}.contact-details{justify-content:center}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease-out,transform .7s ease-out}.reveal.visible{opacity:1;transform:translateY(0)}
+.case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}.case-card{background:var(--bc-white);border-radius:var(--bc-radius);overflow:hidden;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}.case-card:hover{transform:translateY(-4px);box-shadow:var(--bc-shadow-lg)}.case-body{padding:24px}.case-body h4{font-size:16px;font-weight:700;color:var(--bc-dark);margin-bottom:6px}.case-body .case-sector{font-size:11px;font-weight:600;color:var(--bc-blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}.case-body p{font-size:13px;color:var(--bc-gray-600);line-height:1.6}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav"><div class="nav-inner"><div class="nav-logo"><img src="https://www.martinport.com/wp-content/uploads/2022/05/bigchange-logo.webp" alt="BigChange"/></div><div class="nav-links"><a href="#summary">Summary</a><a href="#franchises">Franchises</a><a href="#comparison">Comparison</a><a href="#impact">Impact</a><a href="#roi">ROI</a><a href="#pricing">Pricing</a><a href="#cases">Case Studies</a><a href="#contact">Contact</a></div></div></nav>
+
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Tailored Proposal</div>
+    <h1>Powering the next phase of <span>Service Solutions Group</span></h1>
+    <p>One platform built for reactive, franchised, man-in-a-van operations — ready to launch your Surface Medic and leak detection franchises with a system that scales from one van to a network.</p>
+    <div class="hero-stat-row">
+      <div class="hero-stat"><div class="num"><em>2</em></div><div class="lbl">New Franchises</div></div>
+      <div class="hero-stat"><div class="num"><em>1</em></div><div class="lbl">Platform</div></div>
+      <div class="hero-stat"><div class="num"><em>∞</em></div><div class="lbl">Scalable Network</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- EXEC SUMMARY -->
+<section class="section" id="summary">
+  <div class="reveal">
+    <div class="section-tag">Executive Summary</div>
+    <h2>Built for reactive businesses — not bolted onto planned maintenance</h2>
+    <p class="subtitle">Michael, you said Joblogic is fine for planned maintenance but doesn't fit a reactive, man-in-a-van model. That's exactly where BigChange lives. Built from the ground up around live scheduling, intelligent dispatch, and getting your technicians from call to cash fast.</p>
+  </div>
+  <div class="exec-grid">
+    <div class="exec-card reveal">
+      <div class="exec-icon blue">⚡</div>
+      <h3>Reactive by Design</h3>
+      <p>Quick Job gets a reactive call from customer to technician's device in seconds. Schedule Assist uses AI to pick the best technician based on diary, location, skills and success rate. Route optimisation saves time and fuel on every run.</p>
+    </div>
+    <div class="exec-card reveal">
+      <div class="exec-icon cyan">💷</div>
+      <h3>Cash Flow in Real Time</h3>
+      <p>You flagged this as the biggest pain from your previous Surface Medic franchise — chasing payment after the technician left site. On-site card payments via Stripe, QR code payment links, automated invoice emails. Cash flow is king — speed it up.</p>
+    </div>
+    <div class="exec-card reveal">
+      <div class="exec-icon green">🔀</div>
+      <h3>Software That Fits You — Not the Other Way Around</h3>
+      <p>You said it yourself: software should fit the business, not the other way around. BigChange works across 60+ industries because it's fully customisable — worksheets, workflows, job types, reports. Same system runs your Surface Medic franchise and your leak detection business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FRANCHISE-SPECIFIC VALUE -->
+<section class="section" id="franchises">
+  <div class="reveal">
+    <div class="section-tag">Built for Both Franchises</div>
+    <h2>One platform, two franchise models</h2>
+    <p class="subtitle">BigChange handles the nuances of both franchises under one roof — without forcing them into the same workflow.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:24px;" class="reveal">
+
+    <div class="franchise-card">
+      <span class="franchise-label">🎨 Cosmetic Repair</span>
+      <h3 style="font-size:20px;font-weight:700;color:var(--bc-dark);margin-bottom:14px;">Surface Medic Franchise</h3>
+      <p style="font-size:14px;color:var(--bc-gray-600);line-height:1.65;margin-bottom:20px;">Half-day and full-day rates. B2C bookings via landing pages, SEO, social media. Quote follow-up is where the conversions live — automate it and you recover revenue that would otherwise slip.</p>
+      <div style="font-size:13px;color:var(--bc-gray-800);line-height:1.8;">
+        <strong style="color:var(--bc-blue);">Key features:</strong><br>
+        • Embed booking site into landing pages — direct booking flow<br>
+        • Quote acceptance links — customers accept online, no phone tag<br>
+        • Automated quote chasing when expired<br>
+        • On-site card payments via Stripe (Visa, Mastercard, Amex)<br>
+        • Customer satisfaction surveys linked to Trustpilot
+      </div>
+    </div>
+
+    <div class="franchise-card">
+      <span class="franchise-label">💧 Leak Detection</span>
+      <h3 style="font-size:20px;font-weight:700;color:var(--bc-dark);margin-bottom:14px;">Leak Detection Franchise</h3>
+      <p style="font-size:14px;color:var(--bc-gray-600);line-height:1.65;margin-bottom:20px;">Highly reactive — customers call when there's a problem. You mentioned pre-scripted report templates with methodical sections and photo evidence. BigChange handles all of that natively.</p>
+      <div style="font-size:13px;color:var(--bc-gray-800);line-height:1.8;">
+        <strong style="color:var(--bc-blue);">Key features:</strong><br>
+        • Quick Job dispatch — call to technician in seconds<br>
+        • Schedule Assist AI picks the right engineer based on proximity, skills and success rate<br>
+        • Methodical report templates — yes/no, photo, free text, dropdowns<br>
+        • Time, date and GPS-stamped photos with annotation<br>
+        • Speech-to-text for engineers writing up reports on the go
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHAT WE HEARD -->
+<section class="section">
+  <div class="reveal">
+    <div class="section-tag">What We Heard</div>
+    <h2>The priorities you raised — and how BigChange delivers</h2>
+    <p class="subtitle">Straight from our conversation on the demo, with the direct BigChange answer for each.</p>
+  </div>
+  <div style="display:grid;gap:20px;" class="reveal">
+
+    <div style="background:var(--bc-white);border-radius:var(--bc-radius);padding:28px 32px;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">🗣️ What you said</div><p style="font-size:14px;color:var(--bc-gray-600);line-height:1.65;font-style:italic;">"Joblogic is very focused on pre-planned maintenance. We're a lot more reactive. It just doesn't really suit what I want out of a CRM system."</p></div>
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">✅ How BigChange fixes it</div><p style="font-size:14px;color:var(--bc-gray-800);line-height:1.65;">BigChange is built for reactive-first operations. Quick Job, Schedule Assist AI, route optimisation, drag-and-drop scheduling, hardwired tracking integrated into every decision. Reactive is the default — planned maintenance is the bonus.</p></div>
+    </div>
+
+    <div style="background:var(--bc-white);border-radius:var(--bc-radius);padding:28px 32px;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">🗣️ What you said</div><p style="font-size:14px;color:var(--bc-gray-600);line-height:1.65;font-style:italic;">"Cash flow, very much so. That was historically one of the biggest issues with our previous Surface Medic franchise — getting payment off somebody when the technician left site."</p></div>
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">✅ How BigChange fixes it</div><p style="font-size:14px;color:var(--bc-gray-800);line-height:1.65;">On-site card payments via Stripe — scan a QR code, customer pays before the technician leaves. Accepts Visa, Mastercard, Amex. Payment links in invoice emails with your branding. Cash collected same-day, not 30 days later.</p></div>
+    </div>
+
+    <div style="background:var(--bc-white);border-radius:var(--bc-radius);padding:28px 32px;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">🗣️ What you said</div><p style="font-size:14px;color:var(--bc-gray-600);line-height:1.65;font-style:italic;">"We'll have a pre-scripted template for leak detection — they go through it methodically, complete all the sections, add narrative and photos. Can that be built in?"</p></div>
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">✅ How BigChange fixes it</div><p style="font-size:14px;color:var(--bc-gray-800);line-height:1.65;">Fully customisable worksheets with conditional branching — yes/no, photo, free text, dropdowns, mandatory fields, signature capture. Speech-to-text for engineers so they can talk into the device. All time, date and GPS-stamped for evidence.</p></div>
+    </div>
+
+    <div style="background:var(--bc-white);border-radius:var(--bc-radius);padding:28px 32px;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">🗣️ What you said</div><p style="font-size:14px;color:var(--bc-gray-600);line-height:1.65;font-style:italic;">"We're looking to push landing pages and quite unique, dynamic SEO campaigns — so having the ability for customers to book straight in would be even better."</p></div>
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">✅ How BigChange fixes it</div><p style="font-size:14px;color:var(--bc-gray-800);line-height:1.65;">White-labelled booking site, fully branded with your franchise logos. Embed the booking widget directly into your landing pages. Customers request work, you accept, job auto-creates in the system and drops into the unscheduled bucket.</p></div>
+    </div>
+
+    <div style="background:var(--bc-white);border-radius:var(--bc-radius);padding:28px 32px;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">🗣️ What you said</div><p style="font-size:14px;color:var(--bc-gray-600);line-height:1.65;font-style:italic;">"We have every kind of health and safety accreditation in the world here. Anything I can use to evidence that we do is very advantageous."</p></div>
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">✅ How BigChange fixes it</div><p style="font-size:14px;color:var(--bc-gray-800);line-height:1.65;">Start-of-day H&S checklists, forced risk assessments before any job starts, PDF toolbox talks with read confirmation on the engineer's device. Every action time-stamped and signed off — audit-ready evidence for BFA scrutiny and franchise compliance.</p></div>
+    </div>
+
+    <div style="background:var(--bc-white);border-radius:var(--bc-radius);padding:28px 32px;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">🗣️ What you said</div><p style="font-size:14px;color:var(--bc-gray-600);line-height:1.65;font-style:italic;">"I need a user-friendly CRM for field staff — something the technicians will actually use day-to-day without it slowing them down."</p></div>
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">✅ How BigChange fixes it</div><p style="font-size:14px;color:var(--bc-gray-800);line-height:1.65;">The JobWatch app is built for usability. Big buttons, simple tap-through workflows, speech-to-text, one-tap SatNav. Technicians follow a forced path — timesheet, risk assessment, worksheet, sign-off — so nothing gets missed, but nothing gets in their way either.</p></div>
+    </div>
+
+    <div style="background:var(--bc-white);border-radius:var(--bc-radius);padding:28px 32px;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">🗣️ What you said</div><p style="font-size:14px;color:var(--bc-gray-600);line-height:1.65;font-style:italic;">"Joblogic emails come from a Joblogic address — which is a pain because it ends up in spam, and it makes configuration very difficult."</p></div>
+      <div><div style="font-size:11px;font-weight:700;color:var(--bc-green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">✅ How BigChange fixes it</div><p style="font-size:14px;color:var(--bc-gray-800);line-height:1.65;">Every email sent — quotes, invoices, confirmations, customer satisfaction surveys, ETA alerts — comes from your franchise email domain. Fully white-labelled branding. No no-reply addresses landing in junk folders. Customers receive them, customers trust them.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="section" id="comparison">
+  <div class="reveal">
+    <div class="section-tag">Key Benefits</div>
+    <h2>Joblogic vs. BigChange — where the difference shows</h2>
+    <p class="subtitle">Side-by-side on the things that matter for a reactive, franchised man-in-a-van operation.</p>
+  </div>
+  <div class="table-wrap reveal">
+    <table class="comp-table">
+      <thead><tr><th>Category</th><th>⚠️ Joblogic</th><th>✅ With BigChange</th></tr></thead>
+      <tbody>
+        <tr><td>Core Design</td><td><span class="tag-bad">Planned Maintenance</span> Built for pre-planned servicing and FM. Reactive jobs feel like a bolt-on</td><td><span class="tag-good">Reactive-First</span> Quick Job, Schedule Assist AI, route optimisation, drag-and-drop — built for businesses that respond fast</td></tr>
+        <tr><td>Dispatching Jobs</td><td><span class="tag-bad">Manual</span> Office team decides who gets what, based on their own knowledge of the team</td><td><span class="tag-good">AI Assisted</span> Schedule Assist picks the best technician by proximity, skills, diary, success rate — one click</td></tr>
+        <tr><td>Customisation</td><td><span class="tag-bad">Rigid</span> You fit your business into the software's workflow</td><td><span class="tag-good">Fully Flexible</span> Your workflows, your terminology (Technicians for Surface Medic, Engineers for leak detection), your forms, your branding</td></tr>
+        <tr><td>Vehicle Tracking</td><td><span class="tag-bad">Bolt-On</span> Third-party integration, app-based, can be turned off</td><td><span class="tag-good">Built In</span> Hardwired trackers included free. Integrated into scheduling, ETA alerts, job costings, and drive time calculations</td></tr>
+        <tr><td>Email Delivery</td><td><span class="tag-bad">Joblogic Domain</span> Emails sent from a Joblogic address. Lands in spam. Hard to configure</td><td><span class="tag-good">Your Domain</span> All emails come from your franchise email. Fully white-labelled. Customers actually receive them</td></tr>
+        <tr><td>On-Site Payments</td><td><span class="tag-bad">Not Native</span> Requires third-party workaround</td><td><span class="tag-good">Integrated</span> Stripe-powered card payments on-site via QR. Accepts Visa, Mastercard, Amex. Payment links in invoice emails</td></tr>
+        <tr><td>Scalability</td><td><span class="tag-bad">Limited</span> Fine for a small operation, hits walls as you grow</td><td><span class="tag-good">Franchise Ready</span> Same platform handles 1 van or 2,000 users (Sunbelt Rentals). Multi-site, multi-brand operations supported out of the box</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="section" id="impact">
+  <div class="reveal">
+    <div class="section-tag">Transformation Impact</div>
+    <h2>What changes for Service Solutions Group</h2>
+    <p class="subtitle">From franchise launch through to rollout across the wider group.</p>
+  </div>
+  <div class="impact-banner reveal">
+    <div class="impact-grid">
+      <div class="impact-item"><div class="big-num">⚡</div><h4>Launch Ready in Weeks</h4><p>Three-month onboarding — but your pilot franchises can be live and running inside that window. Board wants it operational in two months. Achievable.</p></div>
+      <div class="impact-item"><div class="big-num">100%</div><h4>Proof of Work</h4><p>Time, date and GPS-stamped photos, signed worksheets, customer sign-off on every job. Evidence-ready for BFA scrutiny and franchise audits.</p></div>
+      <div class="impact-item"><div class="big-num">£0</div><h4>Extra Tracking Cost</h4><p>Hardwired vehicle tracking included. No separate tracker subscription. No app-based trackers that drivers can turn off mid-route.</p></div>
+      <div class="impact-item"><div class="big-num">∞</div><h4>Scales Across the Group</h4><p>Rolls out to your direct-employed teams, emergency works, other divisions. One platform. One source of truth. Same data visibility across the whole group.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI -->
+<section class="section" id="roi">
+  <div class="reveal">
+    <div class="section-tag">ROI Snapshot</div>
+    <h2>The real value for Service Solutions Group</h2>
+    <p class="subtitle">Based on what you told us — two franchise launches, reactive B2C work, ~20–30 jobs per franchise per month at half/full-day rates.</p>
+  </div>
+  <div class="roi-grid">
+    <div class="roi-card reveal"><div class="roi-value blue">Same-Day</div><div class="roi-label">Payment Collection</div><div class="roi-desc">On-site payments eliminate the "chasing customers after site visit" problem you had with your previous Surface Medic franchise. Cash in the bank before the technician's back in their van</div></div>
+    <div class="roi-card reveal"><div class="roi-value cyan">1 Click</div><div class="roi-label">Route Optimisation</div><div class="roi-desc">You watched 5 miles and 22 minutes disappear in a single click — multiplied across every technician, every day, across two growing franchises, that's a serious operational saving</div></div>
+    <div class="roi-card reveal"><div class="roi-value green">Zero</div><div class="roi-label">Missed Bookings</div><div class="roi-desc">Embeddable booking site captures leads from your SEO campaigns and landing pages directly. No lost enquiries. No phone tag. Job auto-created and dispatched</div></div>
+    <div class="roi-card reveal"><div class="roi-value orange">Franchise-Ready</div><div class="roi-label">Multi-Site Model</div><div class="roi-desc">Platform used by trade businesses from 1-man-band to 2,000+ user operations. Handles multi-site, multi-brand structures — each franchise operates independently while you retain group visibility and reporting</div></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="reveal">
+    <div class="section-tag">Indicative Pricing</div>
+    <h2>Straightforward, per-user — no hidden extras</h2>
+    <p class="subtitle">As discussed on the call. Same pricing model as JobLogic (per user), so easy to compare side-by-side. These are list prices — there's a commercial conversation to be had when you're bought in on the software.</p>
+  </div>
+
+  <div style="background:var(--bc-white);border-radius:var(--bc-radius);border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);overflow:hidden;" class="reveal">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+
+      <div style="padding:36px 32px;border-right:1px solid var(--bc-gray-100);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bc-blue);margin-bottom:10px;">Per User</div>
+        <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:8px;">
+          <span style="font-size:14px;font-weight:600;color:var(--bc-gray-400);">£</span>
+          <span style="font-family:'DM Serif Display',serif;font-size:52px;line-height:1;color:var(--bc-dark);">79.95</span>
+          <span style="font-size:14px;color:var(--bc-gray-400);font-weight:500;">/month</span>
+        </div>
+        <div style="font-size:13px;color:var(--bc-gray-600);line-height:1.6;">Back office or mobile app user. Includes full platform access — CRM, scheduling, tracking, worksheets, financials, reporting, Stripe payments, booking portal, Xero integration.</div>
+      </div>
+
+      <div style="padding:36px 32px;border-right:1px solid var(--bc-gray-100);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bc-cyan);margin-bottom:10px;">Optional Hardware</div>
+        <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:8px;">
+          <span style="font-size:14px;font-weight:600;color:var(--bc-gray-400);">+£</span>
+          <span style="font-family:'DM Serif Display',serif;font-size:52px;line-height:1;color:var(--bc-dark);">20</span>
+          <span style="font-size:14px;color:var(--bc-gray-400);font-weight:500;">/month per tablet</span>
+        </div>
+        <div style="font-size:13px;color:var(--bc-gray-600);line-height:1.6;margin-bottom:10px;">Rugged tablet with BigChange pre-loaded. Optional — most customers use their engineers' existing phones. Useful for on-site visibility and photographic evidence capture.</div>
+        <div style="display:inline-block;background:rgba(0,200,83,.08);color:var(--bc-green);font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;letter-spacing:.04em;">✓ Cradle installed in van — FREE</div>
+      </div>
+
+      <div style="padding:36px 32px;background:linear-gradient(135deg,rgba(0,102,255,.03),rgba(0,194,203,.04));">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bc-green);margin-bottom:10px;">Included As Standard</div>
+        <div style="font-size:13px;color:var(--bc-gray-800);line-height:1.9;">
+          ✓ Hardwired vehicle tracking<br>
+          ✓ Xero &amp; Sage integrations<br>
+          ✓ Unlimited custom worksheets<br>
+          ✓ White-labelled booking portal<br>
+          ✓ UK-based onboarding &amp; support<br>
+          ✓ API access
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Commercial conversation callout -->
+  <div style="margin-top:24px;background:rgba(0,102,255,.04);border-left:4px solid var(--bc-blue);border-radius:8px;padding:20px 24px;" class="reveal">
+    <div style="font-size:13px;color:var(--bc-gray-800);line-height:1.6;"><strong>Heads up:</strong> These are list prices. Once you're confident the software fits, we'll sit down and work through the commercials properly — sized around your pilot franchise users, back office, any volume discount, and onboarding support. No surprises, no hidden fees.</div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="section" id="cases">
+  <div class="reveal">
+    <div class="section-tag">Trade Businesses Using BigChange</div>
+    <h2>Proven across the kind of business you're building</h2>
+    <p class="subtitle">Three UK field service businesses running on BigChange — including a surface repair specialist who doubled their business in 6 months. Click through to read or watch their stories.</p>
+  </div>
+  <div class="case-grid">
+
+    <a href="https://www.bigchange.com/success-stories/bigchange-helps-surface-repair-specialist-prymo-double-business" target="_blank" rel="noopener" class="case-card reveal" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+      <div style="width:100%;height:200px;overflow:hidden;background:#1a1f36;">
+        <img src="https://cdn.prod.website-files.com/652e90c1583f67a8de233f2d/65aec0a16219eaa0ecc3dc26_659fb6b0c9dd69f8738920d8_BigChange_Prymo_04352_LowRes_1200pix.avif" alt="Prymo Surface Solutions" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+      </div>
+      <div class="case-body">
+        <div class="case-sector">Surface Repair Specialist · Manchester</div>
+        <h4>Prymo doubled their business in 6 months</h4>
+        <p>The north-west's largest repair and resurfacing company — same market Service Solutions is entering. Works with Balfour Beatty, English Heritage and Manchester City Council. Replaced disparate systems with BigChange and <strong>doubled the business in 6 months</strong>, halved account management costs, and committed to 25% team growth.</p>
+        <div style="display:flex;gap:16px;margin-top:16px;padding-top:16px;border-top:1px solid var(--bc-gray-100);">
+          <div><div style="font-size:18px;font-weight:800;color:var(--bc-green);">2×</div><div style="font-size:10px;color:var(--bc-gray-400);text-transform:uppercase;letter-spacing:.05em;">Business size</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--bc-blue);">50%</div><div style="font-size:10px;color:var(--bc-gray-400);text-transform:uppercase;letter-spacing:.05em;">Admin cost cut</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--bc-cyan);">25%</div><div style="font-size:10px;color:var(--bc-gray-400);text-transform:uppercase;letter-spacing:.05em;">Team growth</div></div>
+        </div>
+        <div style="margin-top:14px;font-size:12px;font-weight:600;color:var(--bc-blue);">Read case study →</div>
+      </div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=lGeD_45cimM" target="_blank" rel="noopener" class="case-card reveal" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+      <div style="width:100%;height:200px;overflow:hidden;background:#1a1f36;position:relative;">
+        <img src="https://cdn.prod.website-files.com/652e90c1583f67a8de233f2d/67da907891732db96c1bc88f_Sherwoods.jpeg" alt="Sherwoods" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25);">
+          <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.3);">
+            <div style="width:0;height:0;border-left:18px solid var(--bc-dark);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px;"></div>
+          </div>
+        </div>
+        <div style="position:absolute;top:12px;right:12px;background:rgba(255,0,0,.9);color:#fff;padding:3px 10px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;">▶ Watch on YouTube</div>
+      </div>
+      <div class="case-body">
+        <div class="case-sector">Multi-Trade · South West UK</div>
+        <h4>Sherwoods: one system, every trade</h4>
+        <p>Family-owned business running roofing, electrical, plumbing, drainage, HVAC and more across a team of 50. Uses BigChange 100% of the time for timesheets, jobsheets, signatures, certification and photographic evidence.</p>
+        <div style="margin-top:14px;font-size:12px;font-weight:600;color:var(--bc-blue);">Watch their story →</div>
+      </div>
+    </a>
+
+    <a href="https://www.bigchange.com/success-stories/dssl-secures-greener-future-with-bigchange" target="_blank" rel="noopener" class="case-card reveal" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+      <div style="width:100%;height:200px;overflow:hidden;background:#1a1f36;">
+        <img src="https://cdn.prod.website-files.com/652e90c1583f67a8de233f2d/6622546669003ea41a54d2df_1200pix_bigchange_dssl_01488.avif" alt="DSSL Group" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+      </div>
+      <div class="case-body">
+        <div class="case-sector">Installation · Multi-Site Operations</div>
+        <h4>DSSL Group — family-run, fast-scaling</h4>
+        <p>Family-owned installation business replaced fragmented systems with BigChange. One platform for CRM, scheduling, native tracking, compliance and finance. Multi-site operations with centralised visibility — exactly the structure Service Solutions is building.</p>
+        <div style="margin-top:14px;font-size:12px;font-weight:600;color:var(--bc-blue);">Read case study →</div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Magicman recent-onboarding callout -->
+  <div style="margin-top:32px;background:linear-gradient(135deg,rgba(0,102,255,.05),rgba(0,194,203,.05));border:1px solid rgba(0,102,255,.12);border-radius:var(--bc-radius);padding:28px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;" class="reveal">
+    <div style="flex-shrink:0;background:linear-gradient(135deg,var(--bc-blue),var(--bc-cyan));color:#fff;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 16px rgba(0,102,255,.2);">🎉</div>
+    <div style="flex:1;min-width:260px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bc-blue);margin-bottom:4px;">Recently Onboarded · Same Industry</div>
+      <h3 style="font-size:18px;font-weight:700;color:var(--bc-dark);margin-bottom:6px;">Magicman — UK's best-known surface repair business</h3>
+      <p style="font-size:14px;color:var(--bc-gray-600);line-height:1.6;margin:0;">We've just onboarded <strong>Magicman Holdings</strong> — the UK's largest surface repair specialist, operating in exactly the same category Service Solutions is entering. A franchise-model business, now live on BigChange and scaling on the same platform you'd be rolling out.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- CONTACT / NEXT STEPS -->
+<section class="section" id="contact">
+  <div class="reveal">
+    <div class="section-tag">Your Account Team</div>
+    <h2>What happens next</h2>
+    <p class="subtitle">You mentioned the senior management team sits down in about two weeks. Here's the plan to make sure they've got everything they need.</p>
+  </div>
+
+  <div style="margin-bottom:40px;" class="reveal">
+    <div style="background:var(--bc-white);border-radius:var(--bc-radius);padding:40px;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);position:relative;overflow:hidden;max-width:720px;margin:0 auto;">
+      <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--bc-blue),var(--bc-cyan));border-radius:4px 0 0 4px;"></div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--bc-blue),var(--bc-cyan));color:white;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;">→</div>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bc-blue);">Next Step</span>
+      </div>
+      <h3 style="font-size:20px;font-weight:700;color:var(--bc-dark);margin-bottom:12px;">Catch up, then get in a room together</h3>
+      <p style="font-size:14px;color:var(--bc-gray-600);line-height:1.65;">Once you've had time to review this, we'll catch up as agreed. From there, let's get a meeting in the diary — ideally in person. Tablet in hand, your leak detection template and Surface Medic workflow built in, the team getting hands-on with the actual product.</p>
+    </div>
+  </div>
+
+  <div class="contact-section reveal">
+    <div class="contact-avatar">MF</div>
+    <div class="contact-info">
+      <h3>Matthew Fryer</h3>
+      <div class="contact-role">Account Executive — BigChange</div>
+      <div class="contact-details">
+        <span>📧 <a href="mailto:matthew.fryer@bigchange.com">matthew.fryer@bigchange.com</a></span>
+        <span>📞 <a href="tel:+447951081056">07951 081 056</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer"><img src="https://www.martinport.com/wp-content/uploads/2022/05/bigchange-logo.webp" alt="BigChange" style="height:24px;opacity:.4;margin-bottom:12px;"/><br>This proposal was prepared exclusively for Service Solutions Group. Confidential.</div>
+
+<script>
+const observer=new IntersectionObserver(e=>{e.forEach((e,i)=>{e.isIntersecting&&(setTimeout(()=>e.target.classList.add('visible'),i*80),observer.unobserve(e.target))})},{threshold:.15});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+</script>
+</body>
+</html>
